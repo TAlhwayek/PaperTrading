@@ -1,3 +1,0 @@
-/Users/tonyalhwayek/Desktop/Important Folders/Paper Trading/cmake-build-debug/CMakeFiles/Paper_Trading.dir
-/Users/tonyalhwayek/Desktop/Important Folders/Paper Trading/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/tonyalhwayek/Desktop/Important Folders/Paper Trading/cmake-build-debug/CMakeFiles/rebuild_cache.dir
