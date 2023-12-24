@@ -37,6 +37,7 @@ void askInput(account user) {
                 // Check if ticket exists in market
                 if (user.checkIfTickerExists(input)) {
                     user.buyStock(input);
+                    // Remove later on
                     user.changeValue(input);
                 } else {
                     cout << "\nInvalid stock symbol. Transaction has been cancelled.\n" << endl;
