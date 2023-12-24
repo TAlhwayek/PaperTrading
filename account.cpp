@@ -2,6 +2,12 @@
 // Created by Tony Alhwayek on 11/25/23.
 //
 
+// TODO:
+// Randomly simulate stock fluctuations
+//          Also make stock fluctuations be percentages, not flat values
+// Add more stocks (obviously)
+// Fix some more stuff (what stuff? Beats me)
+
 #include <iomanip>
 #include <iostream>
 
