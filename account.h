@@ -18,7 +18,6 @@ class account {
     unordered_map<string, double> market;
     unordered_map<string, vector<double>> portfolioBuyValues;
 
-
     // Profit
     float profitPercent;
     float profit;
@@ -30,19 +29,16 @@ class account {
     double calculateChange(const string&);
     double calculateAveragePrice(const string&);
 
-    // Setters
-
 public:
     // Functions
     account();
     void printStocks();
     void buyStock(const string&);
     void sellStock(const string &);
-    void printMarket();
     bool checkIfTickerExists(const string&);
     bool checkIfUserOwnsTicker(const string&);
+    void printMarket();
     void changeValue(const string&);
-
 };
 
 #endif // PAPER_TRADING_ACCOUNT_H
