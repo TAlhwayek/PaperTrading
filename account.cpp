@@ -6,6 +6,8 @@
 // Randomly simulate stock fluctuations
 //          Also make stock fluctuations be percentages, not flat values
 // Add more stocks (obviously)
+// Fix view portfolio formatting
+//          Move titles to top
 // Fix some more stuff (what stuff? Beats me)
 
 #include <iomanip>
@@ -153,7 +155,7 @@ void account::printPortfolio() { //unordered_map<string, double> portfolio) {
     // Add remaining balance to sum
     sum += getCash();
 
-    cout << "---------------------------" << endl;
+    cout << "---------------------------------------------------------------------------------" << endl;
     cout << "Total portfolio value: $" << sum << endl;
     if(totalChange > 0) {
         cout << "Total gains: $" << totalChange << endl;
@@ -171,7 +173,7 @@ void account::printPortfolio() { //unordered_map<string, double> portfolio) {
 void account::printStocks() {
     cout << "\nPortfolio:" << endl;
     cout << "Available cash: $" << getCash() << endl;
-    cout << "---------------------------" << endl;
+    cout << "---------------------------------------------------------------------------------" << endl;
     printPortfolio();
 }
 
