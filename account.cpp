@@ -110,6 +110,7 @@ void account::sellStock(const string &ticker) {
         } else {
             portfolio.erase(ticker);
         }
+        // Remove first entry from price map's vector
         portfolioBuyValues[ticker].erase(portfolioBuyValues[ticker].begin());
         cout << "You've successfully sold " << ticker << " for $" << market[ticker]
              << "." << endl;
