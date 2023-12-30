@@ -3,14 +3,14 @@
 //
 
 // TODO:
-// - Make stock fluctuations be percentages, not flat values
 // - Add more stocks (obviously)
 // - Fix view portfolio formatting
 //          o Move titles to top
-//          o Fix minus sign
+//          o Fix minus sign??
 // - Fix updating average after selling
 // - Maybe add number that user can buy
 //          o i.e., "buy 5 SMH"
+// - Save data and read on boot
 // - Fix some more stuff (what stuff? Beats me)
 
 #include <iomanip>
