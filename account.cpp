@@ -110,6 +110,7 @@ void account::sellStock(const string &ticker) {
         } else {
             portfolio.erase(ticker);
         }
+        portfolioBuyValues[ticker].erase(portfolioBuyValues[ticker].begin());
         cout << "You've successfully sold " << ticker << " for $" << market[ticker]
              << "." << endl;
     }
