@@ -8,6 +8,9 @@
 // - Fix view portfolio formatting
 //          o Move titles to top
 //          o Fix minus sign
+// - Fix updating average after selling
+// - Maybe add number that user can buy
+//          o i.e., "buy 5 SMH"
 // - Fix some more stuff (what stuff? Beats me)
 
 #include <iomanip>
@@ -136,7 +139,8 @@ void account::printPortfolio() { //unordered_map<string, double> portfolio) {
             totalPerStock += market[ticker];
         }
 
-        std::cout << setw(7) << "Ticker: "
+        std::cout << fixed << setprecision(2)
+                  << setw(7) << "Ticker: "
                   << left  << setw(6) << pair.first
                   << right << setw(8) << "Amount: "
                   << left  << setw(4) << pair.second
