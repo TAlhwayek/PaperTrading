@@ -3,12 +3,12 @@
 //
 
 // TODO:
-// Randomly simulate stock fluctuations
-//          Also make stock fluctuations be percentages, not flat values
-// Add more stocks (obviously)
-// Fix view portfolio formatting
-//          Move titles to top
-// Fix some more stuff (what stuff? Beats me)
+// - Make stock fluctuations be percentages, not flat values
+// - Add more stocks (obviously)
+// - Fix view portfolio formatting
+//          o Move titles to top
+//          o Fix minus sign
+// - Fix some more stuff (what stuff? Beats me)
 
 #include <iomanip>
 #include <iostream>
@@ -180,11 +180,12 @@ void account::printStocks() {
 // Update market
 void account::updateMarket() {
     cout << endl << endl;
-    for(auto & it : market) {
+    for (auto & it : market)  {
+        string key = it.first;
         double changeValue = generateChange();
-        it.second *= (1 - changeValue);
-        cout << it.first << " changed by " << changeValue * 100 << "%." << endl;
+        market[key] *= (1 - changeValue);
     }
+    cout << endl << "Market updated" << endl;
 }
 
 // Generate market change for each stock

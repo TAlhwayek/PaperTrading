@@ -1,24 +1,27 @@
 #include "account.h"
 #include <iostream>
+#include <mutex>
 #include <thread>
 #include <unistd.h>
 using namespace std;
 
 bool leave = false;
 
-account user1;
+
+mutex m;
 
 // Infinite timer
-void timer() {
+void timer(account &user) {
     while (!leave) {
+        std::lock_guard<mutex> lock(m);
         // I should randomize the sleep time
         sleep(10);
         // Let stock market update
-        user1.updateMarket();
+        user.updateMarket();
     }
 }
 
-void askInput(account user) {
+void askInput(account &user) {
     string input;
 
     while (!leave) {
@@ -79,10 +82,11 @@ void askInput(account user) {
 
 int main() {
     srand(104931);
+    account user1;
 
 
-    thread timerThread(timer);
-    thread inputThread(askInput, user1);
+    thread timerThread(timer, ref(user1));
+    thread inputThread(askInput, ref(user1));
 
     timerThread.join();
     inputThread.join();

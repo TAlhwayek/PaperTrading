@@ -38,7 +38,7 @@ public:
     bool checkIfTickerExists(const string&);
     bool checkIfUserOwnsTicker(const string&);
     void printMarket();
-    double generateChange();
+    static double generateChange();
     void updateMarket();
 };
 
