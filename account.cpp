@@ -120,7 +120,7 @@ void account::sellStock(const string &ticker) {
 void account::printMarket() {
     cout << "---------------------------" << endl;
     for (const auto &pair : market) {
-        std::cout << "Ticker: " << pair.first << ", Value: $" << pair.second
+        std::cout << "Ticker: " << pair.first << ", Price: $" << pair.second
                   << std::endl;
     }
 }
@@ -179,13 +179,14 @@ void account::printStocks() {
 
 // Update market
 void account::updateMarket() {
-    cout << endl << endl;
     for (auto & it : market)  {
         string key = it.first;
         double changeValue = generateChange();
         market[key] *= (1 - changeValue);
     }
-    cout << endl << "Market updated" << endl;
+    cout << "\n---------------\n";
+    cout << "Market updated\n";
+    cout << "---------------\n";
 }
 
 // Generate market change for each stock
