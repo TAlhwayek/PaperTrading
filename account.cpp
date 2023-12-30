@@ -177,10 +177,19 @@ void account::printStocks() {
     printPortfolio();
 }
 
-// Temp function to simulate market fluctuations
-void account::changeValue(const string& ticker) {
+// Update market
+void account::updateMarket() {
+    cout << endl << endl;
+    for(auto & it : market) {
+        double changeValue = generateChange();
+        it.second *= (1 - changeValue);
+        cout << it.first << " changed by " << changeValue * 100 << "%." << endl;
+    }
+}
+
+// Generate market change for each stock
+double account::generateChange() {
     double f = (double)rand() / RAND_MAX;
     double sum = -2.00 + f * (2.00 - -2.00);
-    cout << ticker <<  " CHANGED BY: " << fixed << setprecision(2) << sum << endl;
-    market[ticker] += sum;
+    return sum/100;
 }

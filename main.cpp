@@ -6,11 +6,15 @@ using namespace std;
 
 bool leave = false;
 
+account user1;
+
 // Infinite timer
 void timer() {
     while (!leave) {
+        // I should randomize the sleep time
         sleep(10);
-        // Simulate stock fluctuations here
+        // Let stock market update
+        user1.updateMarket();
     }
 }
 
@@ -37,8 +41,6 @@ void askInput(account user) {
                 // Check if ticket exists in market
                 if (user.checkIfTickerExists(input)) {
                     user.buyStock(input);
-                    // Remove later on
-                    user.changeValue(input);
                 } else {
                     cout << "\nInvalid stock symbol. Transaction has been cancelled.\n" << endl;
                 }
@@ -77,7 +79,8 @@ void askInput(account user) {
 
 int main() {
     srand(104931);
-    account user1;
+
+
     thread timerThread(timer);
     thread inputThread(askInput, user1);
 

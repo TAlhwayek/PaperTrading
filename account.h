@@ -38,7 +38,8 @@ public:
     bool checkIfTickerExists(const string&);
     bool checkIfUserOwnsTicker(const string&);
     void printMarket();
-    void changeValue(const string&);
+    double generateChange();
+    void updateMarket();
 };
 
 #endif // PAPER_TRADING_ACCOUNT_H
